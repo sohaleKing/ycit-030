@@ -5,7 +5,6 @@ import { navbarItems } from "./states/navItems"
 import { Products } from "./components/Products"
 import React from "react"
 import { CustomLink } from "./router-components/CustomLink"
-import { useState } from "react"
 import { AboutCarrier } from "./components/AboutCarrier"
 import { AboutContact } from "./components/AboutContact"
 import { AboutTeam } from "./components/AboutTeam"
@@ -19,17 +18,6 @@ import { AboutTeam } from "./components/AboutTeam"
 // some suggestions:  Outlet, useLocation, useNavigate, useResolvedPath
 
 export function App() {
-    const [subMenu, setSubMenu] = useState("")
-
-    // const hideSubMenu = () => {
-    //   setActiveMenuName("");
-    // };
-    // const handleMenuName = (menuName) => {
-    //     setActiveMenuName(menuName);
-    // };
-
-    // className={ menu.children ? "menu-item-has-children" : "" }
-
     const theNavItems = navbarItems.map((el) => {
         return (
             <li key={el.key}>

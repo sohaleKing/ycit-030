@@ -4,22 +4,20 @@ body {
 
 body > div {
     height: 100vh;
+    background-color: lightgray;
 }
 
 nav {
-    background-color: lightsteelblue;
-
+    background-color: rgb(185, 40, 40);
+    color: white;
     display: flex;
-
     align-items: center;
 }
 
 nav > ul {
     margin-left: auto;
     padding: 1rem;
-
     display: flex;
-
     gap: 1rem;
 }
 
@@ -32,18 +30,10 @@ nav > span {
     padding: 1rem;
 }
 
-/* 
-Seems to cause a wierd flicker with the I cursor
-nav > ul > li:hover {
-    cursor: pointer;
-} */
-
 #app-body {
     height: 100%;
-
     display: grid;
     grid-template-columns: 1fr;
-
     place-items: center;
 }
 
@@ -51,6 +41,10 @@ nav > ul > li:hover {
     font-weight: bold;
 }
 
-.thursday-promo {
+.evenDays {
     border: 2px solid orange;
+}
+
+.oddDays {
+    border: 2px solid pink;
 }

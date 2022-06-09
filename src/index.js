@@ -1,21 +1,15 @@
-import reactTaco from "react-dom"
+import React from "react"
+import ReactDOM from "react-dom/client"
 import { App } from "./App"
-// import { App as AppNoGoodReloads } from "./App-no-good-reloads"
 import { BrowserRouter } from "react-router-dom"
 
 import "./styles.css"
 
-const theDiv = document.createElement("div")
-document.body.appendChild(theDiv)
-
-// const MyComponent = () => {
-//     return <div>Hello world</div>
-// }
-
-reactTaco.render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>,
-    theDiv
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(
+    <React.StrictMode>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </React.StrictMode>
 )
-// reactTaco.render(<AppNoGoodReloads />, theDiv)

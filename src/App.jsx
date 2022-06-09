@@ -1,9 +1,9 @@
 import { Link, Route, Routes } from "react-router-dom"
-import { About } from "./About"
-import { Cart } from "./Cart"
-import { navbarItems } from "./navItems"
-import { Products } from "./Products"
-import { useBobsCounter } from "./useBobsCounter"
+import { About } from "./components/About"
+import { Cart } from "./components/Cart"
+import { navbarItems } from "./states/navItems"
+import { Products } from "./components/Products"
+import React from "react"
 
 // Assignment #1
 
@@ -14,8 +14,6 @@ import { useBobsCounter } from "./useBobsCounter"
 // some suggestions:  Outlet, useLocation, useNavigate, useResolvedPath
 
 export function App() {
-    const num = useBobsCounter()
-
     const theNavItems = navbarItems.map((el) => {
         return (
             <li key={el.key}>
@@ -25,9 +23,9 @@ export function App() {
     })
 
     return (
-        <>
+        <React.Fragment>
             <nav>
-                <span>Tacomania {num}</span>
+                <span>Assignment1 - Soheyl Rahgozar</span>
                 <ul>{theNavItems}</ul>
             </nav>
             <div id="app-body">
@@ -38,6 +36,6 @@ export function App() {
                     <Route path="cart" element={<Cart />} />
                 </Routes>
             </div>
-        </>
+        </React.Fragment>
     )
 }

@@ -17,6 +17,8 @@ nav {
 nav > ul {
     margin-left: auto;
     padding: 1rem;
+    background-color: white;
+    color: black;
     display: flex;
     gap: 1rem;
 }
@@ -39,12 +41,4 @@ nav > span {
 
 .bold {
     font-weight: bold;
-}
-
-.evenDays {
-    border: 2px solid orange;
-}
-
-.oddDays {
-    border: 2px solid pink;
 }

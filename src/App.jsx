@@ -4,6 +4,11 @@ import { Cart } from "./components/Cart"
 import { navbarItems } from "./states/navItems"
 import { Products } from "./components/Products"
 import React from "react"
+import { CustomLink } from "./router-components/CustomLink"
+import { useState } from "react"
+import { AboutCarrier } from "./components/AboutCarrier"
+import { AboutContact } from "./components/AboutContact"
+import { AboutTeam } from "./components/AboutTeam"
 
 // Assignment #1
 
@@ -14,10 +19,22 @@ import React from "react"
 // some suggestions:  Outlet, useLocation, useNavigate, useResolvedPath
 
 export function App() {
+    const [subMenu, setSubMenu] = useState("")
+
+    // const hideSubMenu = () => {
+    //   setActiveMenuName("");
+    // };
+    // const handleMenuName = (menuName) => {
+    //     setActiveMenuName(menuName);
+    // };
+
+    // className={ menu.children ? "menu-item-has-children" : "" }
+
     const theNavItems = navbarItems.map((el) => {
         return (
             <li key={el.key}>
-                <Link to={el.name}>{el.label}</Link>
+                <CustomLink to={el.name}>{el.label}</CustomLink>
+                {/* match to see if the link is active different CSS */}
             </li>
         )
     })
@@ -32,7 +49,11 @@ export function App() {
                 <Routes>
                     <Route path="/" element={<div>Home</div>} />
                     <Route path="products" element={<Products />} />
-                    <Route path="about" element={<About />} />
+                    <Route path="/about" element={<About />}>
+                        <Route path="carrier" element={<AboutCarrier />} />
+                        <Route path="contact" element={<AboutContact />} />
+                        <Route path="team" element={<AboutTeam />} />
+                    </Route>
                     <Route path="cart" element={<Cart />} />
                 </Routes>
             </div>
